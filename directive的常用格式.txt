@@ -29,8 +29,7 @@ phonecatDirectives.directive('directiveName', function($inject) {
    　　link: function(scope, iElement, iAttrs) { ... }  
    };  
 });  
-2，定义一个js的域
-查看复制打印?
+2，定义一个js的域  定义一个js域可以设置公共变量
 var phonecatDirectives = angular.module('phonecatDirectives', []);  
   
 phonecatDirectives.directive('directiveName', function($inject) {  
