@@ -1,0 +1,46 @@
+# angular-directive
+
+一，angularjs directive的常用格式
+1，直接return
+var phonecatDirectives = angular.module('phonecatDirectives', []);  
+  
+phonecatDirectives.directive('directiveName', function($inject) {  
+  
+   return {  
+   　　template: '<div></div>',  
+  
+   　　replace: false,  
+  
+   　　transclude: true,  
+  
+   　　restrict: 'E',  
+  
+   　　scope: { ... },  
+  
+      controller: function($scope, $element){ .... },     
+  
+   　  compile: function(tElement, tAttrs, transclude) {  
+   　　　　return {  
+   　　　　　　pre: function preLink(scope, iElement, iAttrs, controller) { ... },  
+   　　　　　　post: function postLink(scope, iElement, iAttrs, controller) { ... }  
+   　　　　}  
+   　　},  
+  
+   　　link: function(scope, iElement, iAttrs) { ... }  
+   };  
+});  
+2，定义一个js的域
+查看复制打印?
+var phonecatDirectives = angular.module('phonecatDirectives', []);  
+  
+phonecatDirectives.directive('directiveName', function($inject) {  
+  
+  //可以在里面定制任意格式
+   var mydi = {  
+   　　template: '<div></div>',  
+      ..................... ,  
+   　　link: function(scope, iElement, iAttrs) { ... }  
+   };  
+  
+   return mydi;  
+});  
